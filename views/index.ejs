@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Diary</title>
+    </head>
+
+    <body>
+        <h1>Diary</h1>
+        <% entries.forEach(entry => { %>
+            <div class="entry">
+                <h2><%= entry.title %></h2>
+                <p><%= entry.date %></p>
+                <p><%= entry.content %></p>
+            </div>
+        <% }) %>
+        <form method="POST">
+            Title: <input type="text" name="title"></input><br/>
+            Content:<br/>
+            <textarea name="content"></textarea><br/>
+            <input type="submit" value="Save" />
+        </form>
+        <a href="/auth/logout">Log out</a>
+    </body>
+</html>
